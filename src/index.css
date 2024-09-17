@@ -1,13 +1,115 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  user-select: none;
+  overflow: hidden;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0%{
+    background-position: 0% 0%;
+  }
+  50%{
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0% 0%;
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  margin-top: 15%;
+}
+
+h1{
+  text-shadow: 1px 1px 0 #ff0000, -1px -1px 0 #0000ff;
+  background: linear-gradient(45deg, #bb1010, #0000ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 100px;
+  letter-spacing: 5px;
+  animation: shadowAnimation 1.5s ease infinite;
+}
+
+@keyframes shadowAnimation {
+  0%{
+    text-shadow: 1px 1px 0 #bb1010, -1px -1px 0 #0000ff;
+  }
+  50%{
+    text-shadow: 2px 2px 0 #bb1010, -2px -2px 0 #0000ff;
+  }
+  100%{
+    text-shadow: 1px 1px 0 #bb1010, -1px -1px 0 #0000ff;
+  }
+}
+
+button {
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  min-width: 230px;
+  min-height: 50px;
+  border-radius: 30px;
+  background-color: darkgray;
+  color: rgb(115, 37, 37);
+}
+
+button:hover,
+button:focus{
+  background-color: rgb(177, 77, 77);
+  color: black;
+}
+
+.board{
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  gap: 3px;
+  margin: 20px auto;
+}
+
+.cell{
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 30%;
+  cursor: pointer;
+  margin-left: 38vw;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  filter: drop-shadow(0 0 4px black);
+}
+
+.cell:focus,
+.cell:hover{
+  transform: scale(1.05);
+}
+
+.h2{
+  font-size: 40px;
+  color: rgb(34, 34, 1);
+  font-weight: 400;
 }
